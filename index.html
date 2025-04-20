@@ -1,0 +1,37 @@
+<!DOCTYPE html>  
+<html lang="es">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>Página de Chat de IA</title>  
+<style>  
+    /* Estilos básicos */  
+    body { font-family: Arial, sans-serif; margin: 0; padding: 20px; }  
+    #chat { border: 1px solid #ccc; height: 400px; overflow-y: scroll; padding: 10px; margin-bottom: 10px; }  
+    #input { width: 80%; }  
+    button { width: 18%; }  
+</style>  
+</head>  
+<body>  
+<h1>Chat de IA</h1>  
+<div id="chat"></div>  
+<input type="text" id="input" placeholder="Escribe tu mensaje aquí..." />  
+<button onclick="sendMessage()">Enviar</button>  
+
+<script>  
+    function sendMessage() {  
+        const inputField = document.getElementById('input');  
+        const message = inputField.value;  
+        if (message) {  
+            document.getElementById('chat').innerHTML += `<div>Tú: ${message}</div>`;  
+            inputField.value = ''; // Limpiar el campo de entrada  
+
+            // Respuesta simulada de IA (puedes reemplazar esta parte con lógica real más adelante)  
+            setTimeout(() => {  
+                document.getElementById('chat').innerHTML += `<div>IA: Respuesta de IA a "${message}"</div>`;  
+            }, 1000);  
+        }  
+    }  
+</script>  
+</body>  
+</html>  
